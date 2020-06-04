@@ -9,9 +9,15 @@
             <input type="password"  class="form-control" id="exampleInputPassword1" placeholder="Password" name="password"/>
             <small id="passwordHelp" class="form-text text-muted">We'll never share your password with anyone else.</small>
         </div>
+        <#if isRegisterForm>
+        <div class="form-group">
+            <label for="exampleInputEmail1"> Email: </label>
+            <input type="email"  class="form-control" id="exampleInputEmail1" placeholder="Some@some.com" name="email"/>
+        </div>
+        </#if>
         <input type="hidden" name="_csrf" value="${_csrf.token}" />
         <div class="form-row"></div>
-        <button type="submit" class="btn btn-primary"><#if isRegisterForm>Create <#else>Sign in</#if></button>
+        <button type="submit" class="btn btn-primary mr-3"><#if isRegisterForm>Create <#else>Sign in</#if></button>
         <#if !isRegisterForm><a href="/registration">Add new user</a></#if>
         </div>
     </form>
